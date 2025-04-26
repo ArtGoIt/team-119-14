@@ -1,0 +1,71 @@
+/** @format */
+
+.box {
+  padding: 200px 0;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.burger {
+  appearance: none;
+}
+
+.burger-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #c5c5c5;
+  cursor: pointer;
+}
+
+.burger-icon {
+  position: relative;
+}
+
+.burger-icon,
+.burger-icon::after,
+.burger-icon::before {
+  width: 40px;
+  height: 4px;
+  background-color: #000;
+}
+
+.burger-icon::after,
+.burger-icon::before {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.burger-icon::after {
+  top: 8px;
+}
+
+.burger-icon::before {
+  top: -8px;
+}
+
+.burger-btn:hover .burger-icon::after {
+  top: 10px;
+}
+
+.burger-btn:hover .burger-icon::before {
+  top: -10px;
+}
+
+.burger:checked + .burger-btn .burger-icon {
+  background-color: transparent;
+}
+
+.burger:checked + .burger-btn .burger-icon::after {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.burger:checked + .burger-btn .burger-icon::before {
+  top: 0;
+  transform: rotate(-45deg);
+}
